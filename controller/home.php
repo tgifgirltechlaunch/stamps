@@ -26,6 +26,7 @@ class Home
         $welcome = "Welcome";
         $records3 = array();
 
+        $title = "Home";
         // include the view
         include "view/home.php";
     } 

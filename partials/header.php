@@ -1,4 +1,6 @@
-<?php $page = $_GET['page']; if (isset($_GET['action'])) { $action= $_GET['action'];}?>
+<?php // get page and action from the url
+$page = isset($_GET['page']) ? $_GET['page'] : "home";
+$action = isset($_GET['action']) ? $_GET['action'] : "index"; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,7 +22,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav mr-auto">
+        <ul class="navbar-nav mr-auto">
             <li class="nav-item <?php if($page=="home"){ ?>active<?php } ?>">
               <a class="nav-link" href="index.php?page=home">Home</a>
             </li>
@@ -33,7 +35,7 @@
             <li class="nav-item <?php if($page=="heat" && $action == "report"){ ?>active<?php } ?>">
               <a class="nav-link" href="index.php?page=heat&action=report">Report </a>
             </li>
-            <li class="nav-item <?php if($page=="about" && !$action){ ?>active<?php } ?>">
+            <li class="nav-item <?php if($page=="about"){ ?>active<?php } ?>">
               <a class="nav-link" href="index.php?page=about">About </a>
             </li>
           </ul>

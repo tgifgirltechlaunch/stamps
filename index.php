@@ -1,5 +1,10 @@
 <?php
-
+// set error handler
+// capture all errors
+set_error_handler(function($number, $string, $file, $line) {
+    throw new Exception($string);
+}, E_ALL);
+ 
 // get page and action from the url
 $page = isset($_GET['page']) ? $_GET['page'] : "home";
 $action = isset($_GET['action']) ? $_GET['action'] : "index";
@@ -26,7 +31,16 @@ if(file_exists("controller/$page.php"))
     if( ! method_exists($controller, $action)) $action = 'index';
 
     // execute my action
-    $controller->$action();
+    try {
+        $controller->$action();
+    }catch(Exception $e) {
+        $msg = "[" . date('Y-m-d') . "] $e" . PHP_EOL;
+        file_put_contents('logs/app_errors.log', $msg);
+        echo ("We found an error, please try again later");
+    }finally{
+        //disconnect from database
+        $db->disconnect();
+    }
 } 
 else 
 {
