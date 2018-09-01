@@ -1,12 +1,12 @@
 <?php 
-class Features 
+class About 
 {
     /**
      * index action
      */
     public function index() {
         // include the view
-        include "view/features.php";
+        include "view/about.php";
     } 
 
     /**

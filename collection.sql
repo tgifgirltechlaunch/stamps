@@ -8,7 +8,7 @@ SET time_zone = "+00:00";
 
 
 CREATE TABLE `collection` (
-  `id` int(11) AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `year` int(11) NOT NULL,
@@ -17,16 +17,17 @@ CREATE TABLE `collection` (
   `quantity` int(11) NOT NULL,
   `album` tinyint(1) NOT NULL,
   `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `grade` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (id)
+  `grade` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
 ALTER TABLE `collection`
   ADD PRIMARY KEY (`id`);
 
+
+ALTER TABLE `collection`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
-

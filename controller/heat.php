@@ -1,4 +1,5 @@
 <?php
+use Halfpastfour\PHPChartJS\Chart\Bar;
 
 // include classes
 include_once "classes/Album.php";
@@ -254,5 +255,56 @@ class Heat
         // include the view
         $title = "Search Results";
         include "view/heat.php";
+    }
+
+    public function report() {
+        // get stamp album
+        $recordModel = new Record();
+
+        // create the stamp album
+        $albums = $collection = $recordModel->getHeatStamps();
+
+        $years=[];
+        $quantity=[];
+        $album=[];
+
+        //get album collection info into an array
+        foreach($albums as $a){
+            $years[] = $a->year;
+            $quantity[] = $a->quantity;
+            $album[] = $a->album;
+        }
+
+        //create a new bar chart
+        $bar = new Bar();
+        $bar->setId( "myBar" );
+
+        // Set labels
+        $bar->labels()->exchangeArray( $years );
+
+        // Add apples
+        $qty = $bar->createDataSet();
+        $qty->setLabel( "Duplicates" )
+        ->setBackgroundColor( "rgba( 0, 0, 0, .5 )" )
+        ->data()->exchangeArray( $quantity );
+        $bar->addDataSet( $qty );
+
+        // Add oranges as well
+        $al = $bar->createDataSet();
+        $al->setLabel( "Album Glued" )
+        ->setBackgroundColor( "rgba( 0, 0, 0, .1 )" )
+        ->data()->exchangeArray( $album );
+        $bar->addDataSet( $al );
+        
+        // Add some extra data
+        // $al->data()->append( 10 );
+
+        // $bar->addDataSet( $al );
+       
+        // Render the chart
+        $chart = $bar->render();
+
+        //include the view
+        include "view/heat-report.php";
     }
 }

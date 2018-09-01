@@ -7,9 +7,11 @@ $action = isset($_GET['action']) ? $_GET['action'] : "index";
 // check if the page exist
 if(file_exists("controller/$page.php")) 
 {
+    //add the vendor autoload file
+    include "vendor/autoload.php";
+
     // connect to the database
     include "classes/Database.php";
-    
 
     $db = new Database();
     $db->connect();

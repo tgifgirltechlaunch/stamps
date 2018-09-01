@@ -1,5 +1,23 @@
 <?php include "partials/header.php"; ?>
-<h3>Features</h3>
+<h4>Author</h4>
+<div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Lazara Michelle<p>lmichelle@techlaunch.io</p></li>
+    </ul>
+</div>
+<h4>License</h4>
+<div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">MIT</li>
+    </ul>
+</div>
+<h4>Version</h4>
+<div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">V1.0</li>
+    </ul>
+</div>
+<h4>Features</h4>
 <div>
     <ul class="list-group list-group-flush">
     <li class="list-group-item">If record is added with matching data for fields other than image and description, it is NOT added to the database. Instead quantity is incremented.</li>
@@ -10,7 +28,7 @@
     <li class="list-group-item">Home screen has carousel that can be clicked for a larger and more complete stamp record view.</li>
     </ul>
 </div>
-<h3>Improvements</h3>
+<h4>Improvements</h4>
 <div>
     <ul class="list-group list-group-flush">
     <li class="list-group-item">Make view responsive</li>

@@ -24,14 +24,17 @@
             <li class="nav-item <?php if($page=="home"){ ?>active<?php } ?>">
               <a class="nav-link" href="index.php?page=home">Home</a>
             </li>
-            <li class="nav-item <?php if($page=="heat" && $action != "add"){ ?>active<?php } ?>">
+            <li class="nav-item <?php if($page=="heat" && $action != "add" && $action != "report"){ ?>active<?php } ?>">
               <a class="nav-link" href="index.php?page=heat">View </a>
             </li>
             <li class="nav-item <?php if($page=="heat" && $action == "add"){ ?>active<?php } ?>">
               <a class="nav-link" href="index.php?page=heat&action=add">Add </a>
             </li>
-            <li class="nav-item <?php if($page=="features" && !$action){ ?>active<?php } ?>">
-              <a class="nav-link" href="index.php?page=features">Features </a>
+            <li class="nav-item <?php if($page=="heat" && $action == "report"){ ?>active<?php } ?>">
+              <a class="nav-link" href="index.php?page=heat&action=report">Report </a>
+            </li>
+            <li class="nav-item <?php if($page=="about" && !$action){ ?>active<?php } ?>">
+              <a class="nav-link" href="index.php?page=about">About </a>
             </li>
           </ul>
         </div>

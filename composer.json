@@ -1,0 +1,13 @@
+{
+    "name": "lazar/myhomework",
+    "description": "Stamp Collection App",
+    "authors": [
+        {
+            "name": "lmichelletech",
+            "email": "lmichelle@techlaunch.io"
+        }
+    ],
+    "require": {
+        "halfpastfouram/phpchartjs": "^1.0"
+    }
+}
