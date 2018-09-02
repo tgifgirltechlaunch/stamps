@@ -58,7 +58,7 @@
     </tr>
 
     <!-- Table Data -->
-    <?php foreach(Album::$collection as $c) { ?>
+    <?php if(!empty(Album::$collection)){ foreach(Album::$collection as $c) { ?>
         <tr>
             <td><?= $c->name ?></td>
             <td><?= $c->description ?></td>
@@ -75,8 +75,12 @@
             <td><a href="index.php?page=heat&action=subtract&name=<?= $c->name ?>&year=<?= $c->year ?>&width=<?= $c->width ?>&height=<?= $c->height ?>&quantity=<?= $c->quantity ?>&album=<?= $c->album ?>&grade=<?= $c->grade ?>"><i class="fas fa-minus-circle"></i></a></td>
             <td><a href="index.php?page=heat&action=increment&name=<?= $c->name ?>&year=<?= $c->year ?>&width=<?= $c->width ?>&height=<?= $c->height ?>&quantity=<?= $c->quantity ?>&album=<?= $c->album ?>&grade=<?= $c->grade ?>"><i class="fas fa-plus-circle"></i></a></td>
         </tr>
-    <?php } ?>
+    <?php }} ?>
 </table>
+
+
+<?php if(empty(Album::$collection)){ ?>
+<h2>Please add a stamp record.</h2> <?php } ?>
 
 <!-- Include Footer -->
 <?php include "partials/footer.php"; ?>

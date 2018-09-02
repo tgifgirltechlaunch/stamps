@@ -73,6 +73,16 @@ i:hover{
     padding: 80px 15px;
 }
 
+.form-control {
+    padding: .375rem .25rem !important;
+    width: 97%;
+}
+ 
+.btn{
+    padding: .375rem .25rem !important;
+    width: 98%;
+}
+
 @media (min-width: 768px) {
     /* show 3 items */
     .carousel-inner .active,

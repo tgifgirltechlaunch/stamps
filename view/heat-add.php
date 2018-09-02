@@ -27,7 +27,7 @@
     <div class="form-group col-md-6">
       <label for="stampGrade">Grade</label>
       <select id="stampGrade" name="grade" class="form-control" searchable="Grade" required>
-          <option value="default" class="rounded-circle-select" disabled selected>Choose your option</option>
+          <option value="" class="rounded-circle-select" disabled selected>Choose your option</option>
           <option value="superb" class="rounded-circle">Superb</option>
           <option value="extremely fine" class="rounded-circle">Extremely Fine</option>
           <option value="very fine" class="rounded-circle">Very Fine</option>

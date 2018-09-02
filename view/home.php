@@ -146,68 +146,60 @@
 
     <!-- Footer Carousel -->
     <footer class="footer">
-        <div class="container-fluid">
-            <div id="carouselExample" class="carousel slide" data-ride="carousel" data-interval="9000">
-                <div class="carousel-inner row w-100 mx-auto" role="listbox">
-                    <?php foreach ($records2 as $t) $i = 0; { 
-                    if($i++ == 0) {?>
-                    <div class="carousel-item col-md-3  active">
-                        <div class="panel panel-default">
-                            <div class="panel-thumbnail">
+        <?php if(!empty($records2 )){  ?>
+            <div class="container-fluid">
+                <div id="carouselExample" class="carousel slide" data-ride="carousel" data-interval="9000">
+                    <div class="carousel-inner row w-100 mx-auto" role="listbox">
+                        <?php for ($t = 0; $t < 1; $t++) { ?>
+                            <div class="carousel-item col-md-3 active">
                                 <div class="card" style="width: 22rem;">
                                     <div class="card-body">
                                         <div class="slidertop">
-                                            <div class="sliderleft"><img class="card-img-top img-fluid mx-auto" src="<?=$t->image ?>" alt="stamp collecting"></div>
+                                            <div class="sliderleft"><img class="card-img-top img-fluid mx-auto" src="<?=$records2[$t]->image ?>" alt="stamp collecting"></div>
                                             <div class="sliderright">
-                                            <a class="cardlink" href="index.php?page=home&action=submit&name=<?=$t->name ?>&description=<?=$t->description ?>&year=<?=$t->year ?>&width=<?=$t->width ?>&height=<?=$t->height ?>&quantity=<?=$t->quantity ?>&album=<?=$t->album ?>&image=<?=$t->image ?>&grade=<?=$t->grade ?>">
-                                            <h5 class="card-title"><?=$t->name ?></h5></a>
-                                            <div class="card-info"><span>YEAR: <?=$t->year ?></span><span>QTY: <?=$t->quantity ?></span></div></div>
+                                            <a class="cardlink" href="index.php?page=home&action=submit&name=<?=$records2[$t]->name ?>&description=<?=$records2[$t]->description ?>&year=<?=$records2[$t]->year ?>&width=<?=$records2[$t]->width ?>&height=<?=$records2[$t]->height ?>&quantity=<?=$records2[$t]->quantity ?>&album=<?=$records2[$t]->album ?>&image=<?=$records2[$t]->image ?>&grade=<?=$records2[$t]->grade ?>">
+                                            <h5 class="card-title"><?=$records2[$t]->name ?></h5></a>
+                                            <div class="card-info"><span>YEAR: <?=$records2[$t]->year ?></span><span>QTY: <?=$records2[$t]->quantity ?></span></div></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        <?php }?> 
+                        <?php for ($t2 = 1; $t2 < count($records2); $t2++) { ?>
+                            <div class="carousel-item col-md-3">
+                                <div class="card" style="width: 22rem;">
+                                    <div class="card-body">
+                                        <div class="slidertop">
+                                            <div class="sliderleft"><img class="card-img-top img-fluid mx-auto" src="<?=$records2[$t2]->image ?>" alt="stamp collecting"></div>
+                                            <div class="sliderright">
+                                            <a class="cardlink" href="index.php?page=home&action=submit&name=<?=$records2[$t2]->name ?>&description=<?=$records2[$t2]->description ?>&year=<?=$records2[$t2]->year ?>&width=<?=$records2[$t2]->width ?>&height=<?=$records2[$t2]->height ?>&quantity=<?=$records2[$t2]->quantity ?>&album=<?=$records2[$t2]->album ?>&image=<?=$records2[$t2]->image ?>&grade=<?=$records2[$t2]->grade ?>">
+                                            <h5 class="card-title"><?=$records2[$t2]->name ?></h5></a>
+                                            <div class="card-info"><span>YEAR: <?=$records2[$t2]->year ?></span><span>QTY: <?=$records2[$t2]->quantity ?></span></div></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php }?> 
                     </div>
-                    <?php } } ?>
-                    <?php foreach ($records2 as $t) { ?>
-                    
-                        <div class="carousel-item col-md-3 ">
-                            <div class="panel panel-default">
-                                <div class="panel-thumbnail">
-                                    <div class="card" style="width: 22rem;">
-                                        <div class="card-body">
-                                            <div class="slidertop">
-                                                <div class="sliderleft"><img class="card-img-top img-fluid mx-auto" src="<?=$t->image ?>" alt="stamp collecting"></div>
-                                                <div class="sliderright">
-                                                <a class="cardlink" href="index.php?page=home&action=submit&name=<?=$t->name ?>&description=<?=$t->description ?>&year=<?=$t->year ?>&width=<?=$t->width ?>&height=<?=$t->height ?>&quantity=<?=$t->quantity ?>&album=<?=$t->album ?>&image=<?=$t->image ?>&grade=<?=$t->grade ?>">
-                                                <h5 class="card-title"><?=$t->name ?></h5></a>
-                                                <div class="card-info"><span>YEAR: <?=$t->year ?></span><span>QTY: <?=$t->quantity ?></span></div></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    <?php } ?> 
+                    <!-- for adding left and right arrows to manually control carousel -->
+                    <!-- <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+                        <i class="fa fa-chevron-left fa-lg text-muted"></i>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next text-faded" href="#carouselExample" role="button" data-slide="next">
+                        <i class="fa fa-chevron-right fa-lg text-muted"></i>
+                        <span class="sr-only">Next</span>
+                    </a> -->
                 </div>
-                <!-- for adding left and right arrows to manually control carousel -->
-                <!-- <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next text-faded" href="#carouselExample" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a> -->
             </div>
-        </div>
+        <?php }?>
     </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
     <script type="text/javascript">
+    $('#carouselExample').on('slide.bs.carousel', function (e) {
 
-        $('#carouselExample').on('slide.bs.carousel', function (e) {
         var $e = $(e.relatedTarget);
         var idx = $e.index();
         var itemsPerSlide = 4;
@@ -225,11 +217,7 @@
                 }
             }
         }
-        });
-
-        $('#carouselExample').carousel({ 
-            interval: 200;
-        });
+    });
     </script>
 </body>
 </html>
