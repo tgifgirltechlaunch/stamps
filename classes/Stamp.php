@@ -12,6 +12,7 @@ class Stamp
     public $image = "";
     public $grade = "";
 
+    //create stamp object
     public function __construct ($name, $description, $year, $width, $height, $quantity, $album, $image, $grade) {
         $this->name = $name;
         $this->description = $description;
@@ -25,6 +26,6 @@ class Stamp
     }
 
     public function __toString() {
-        return "collection {$this->name} has {$this->quantity} stamps.";
+        return "collection {$this->name} has {$this->quantity} duplicate stamps.";
     }
 }

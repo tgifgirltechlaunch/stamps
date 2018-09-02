@@ -1,7 +1,9 @@
+<!-- Include Header -->
 <?php include "partials/header.php"; ?>
 
 <h1>Add New Stamp</h1>
 
+<!-- Add Stamp Form -->
 <form action="index.php?page=heat&action=submit" method="post">
   <div class="form-row">
     <div class="form-group col-md-6">
@@ -64,4 +66,5 @@
   </div> 
 </form>
 
+<!-- Include Footer -->
 <?php include "partials/footer.php"; ?>

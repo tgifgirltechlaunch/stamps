@@ -10,13 +10,6 @@ class Home
      */
     public function index() {
         // create the model object
-
-
-        $recordModel = new Record();
-
-        // get info for the view
-        $records = $recordModel->getRecords();
-
         $record2Model = new Record();
 
         // get info for the view

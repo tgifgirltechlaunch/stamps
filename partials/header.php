@@ -1,6 +1,7 @@
-<?php // get page and action from the url
-$page = isset($_GET['page']) ? $_GET['page'] : "home";
+<!-- get page and action from the url -->
+<?php $page = isset($_GET['page']) ? $_GET['page'] : "home";
 $action = isset($_GET['action']) ? $_GET['action'] : "index"; ?>
+
 <!DOCTYPE html>
 <html>
 <head>

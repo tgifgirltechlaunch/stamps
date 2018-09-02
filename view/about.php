@@ -1,5 +1,9 @@
+<!-- Include Header -->
 <?php include "partials/header.php"; ?>
+
 <h4>Author</h4>
+
+<!-- Main Content -->
 <div>
     <ul class="list-group list-group-flush">
         <li class="list-group-item">Lazara Michelle<p>lmichelle@techlaunch.io</p></li>
@@ -8,7 +12,9 @@
 <h4>License</h4>
 <div>
     <ul class="list-group list-group-flush">
-        <li class="list-group-item">MIT</li>
+        <li class="list-group-item">MIT
+            <p>This code is free to use for personal and/or commercial purposes; you can redistribute it and/or modify it under the terms of the MIT License. </p>
+        </li>
     </ul>
 </div>
 <h4>Version</h4>
@@ -28,7 +34,7 @@
     <li class="list-group-item">Home screen has carousel that can be clicked for a larger and more complete stamp record view.</li>
     </ul>
 </div>
-<h4>Improvements</h4>
+<h4>Future Improvements</h4>
 <div>
     <ul class="list-group list-group-flush">
     <li class="list-group-item">Make view responsive</li>
@@ -42,4 +48,5 @@
     </ul>
 </div>
 
+<!-- Include Footer -->
 <?php include "partials/footer.php"; ?>

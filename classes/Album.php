@@ -3,9 +3,11 @@
 class Album {
     public static $albumname = "Album";
     public static $collection = [];
-    public static $season = "";
+    public static $season = "2018";
+    public static $total = "";
 
     public static function run() {
+
         // make all sheets have stamps
         foreach(Album::$collection as $sheet) {
             $sheet->name;

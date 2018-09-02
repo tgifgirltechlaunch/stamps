@@ -1,3 +1,4 @@
+<!-- get page and action from the url -->
 <?php $page = $_GET['page']; if (isset($_GET['action'])) { $action= $_GET['action'];} ?>
 <!DOCTYPE html>
 <html>
@@ -18,6 +19,8 @@
         #large-card{
             max-width: 28rem;
             min-width: 28rem;
+            max-height: 22rem;
+            min-height: 22rem;
         }
         #large-card-top{
             display: flex;
@@ -140,14 +143,14 @@
             </div>
         </div>
     </main>
+
+    <!-- Footer Carousel -->
     <footer class="footer">
         <div class="container-fluid">
             <div id="carouselExample" class="carousel slide" data-ride="carousel" data-interval="9000">
                 <div class="carousel-inner row w-100 mx-auto" role="listbox">
                     <?php foreach ($records2 as $t) $i = 0; { 
                     if($i++ == 0) {?>
-
-
                     <div class="carousel-item col-md-3  active">
                         <div class="panel panel-default">
                             <div class="panel-thumbnail">
@@ -226,29 +229,6 @@
 
         $('#carouselExample').carousel({ 
             interval: 200;
-        });
-    </script>
-
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $(".cardlink").click(function(){
-                var data_id = $(this).data('cardid');
-                console.log(">>>>" + data_id);
-                $.ajax({
-                    type: 'POST',
-                    url: 'models/ajax.php',
-                    data: {id: data_id},
-                    dataType: 'json',
-                    success: function(data) {
-                    console.log(">>>>>>>" + data);
-                    //    $("#message").text(data);
-                       if(data.success){
-                            //    elem.hide();
-                               $('#message').html(data.message);
-                        }
-                    }
-                });
-            });
         });
     </script>
 </body>

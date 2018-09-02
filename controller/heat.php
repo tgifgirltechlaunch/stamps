@@ -14,7 +14,8 @@ class Heat
 
         // create the stamp album
         Album::$collection = $recordModel->getHeatStamps();
-        Album::$season = "2018";
+        
+        Album::$total = $recordModel->countHeatStamps();
 
         // start game
         Album::run();
@@ -32,7 +33,7 @@ class Heat
     public function sortDuplicatesDesc() {
         // include the model
         $record5Model = new Record();
-        Album::$season = "2018";
+        
 
         // create the stamp album
         Album::$collection = $record5Model->getHeatStamps();
@@ -52,7 +53,7 @@ class Heat
     public function sortDuplicatesAsc() {
         // include the model
         $record6Model = new Record();
-        Album::$season = "2018";
+        
 
         // create the stamp album
         Album::$collection = $record6Model->getHeatStamps();
@@ -72,7 +73,7 @@ class Heat
     public function sortYearDesc() {
         // include the model
         $record7Model = new Record();
-        Album::$season = "2018";
+        
 
         // create the stamp album
         Album::$collection = $record7Model->getHeatStamps();
@@ -92,7 +93,7 @@ class Heat
     public function sortYearAsc() {
         // include the model
         $record8Model = new Record();
-        Album::$season = "2018";
+        
 
         // create the stamp album
         Album::$collection = $record8Model->getHeatStamps();
@@ -112,7 +113,7 @@ class Heat
     public function sortAlbumTrue() {
         // include the model
         $record9Model = new Record();
-        Album::$season = "2018";
+        
 
         // create the stamp album
         Album::$collection = $record9Model->getHeatStamps();
@@ -132,7 +133,7 @@ class Heat
     public function sortAlbumFalse() {
         // include the model
         $record10Model = new Record();
-        Album::$season = "2018";
+        
 
         // create the stamp album
         Album::$collection = $record10Model->getHeatStamps();
@@ -238,8 +239,8 @@ class Heat
         header('Location: index.php?page=heat');
     }
 
-    
     public function submitSearch() {
+        //checl that term and field have been set
         if(isset($_POST['term'])){
             $term = $_POST['term'];
         }
@@ -247,14 +248,20 @@ class Heat
             $field = $_POST['field'];
         }
 
-        // save the stamp
+        // search for the stamps by column 'field' using value 'term'
         $record11Model = new Record();
         Album::$collection = $record11Model->searchHeatStamp($field, $term);
-        Album::$season = "2018";
+
+        
 
         // include the view
         $title = "Search Results";
         include "view/heat.php";
+    }
+
+    public function countStamps() {
+        //count the stamps
+        
     }
 
     public function report() {
