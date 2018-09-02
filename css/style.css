@@ -41,7 +41,7 @@ body {
 #sortHeader i{
    color: rgb(185, 185, 185);
    padding-right: 10px;
-   font-size: 10px;
+   font-size: 12px;
 }
 #sortHeader i:hover{
    color: #ffffff;

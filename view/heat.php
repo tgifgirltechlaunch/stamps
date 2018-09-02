@@ -33,12 +33,12 @@
 <table class="table table-striped">
     <tr id="sortHeader">
         <th colspan="5"><h5>SORT OPTIONS</h5></th>
-        <th colspan="2"><h5>YEAR</h5><a class="" href="index.php?page=heat&action=sortYearDesc"><i class="fas fa-caret-down"></i> </a>
-            <a class="" href="index.php?page=heat&action=sortYearAsc"> <i class="fas fa-caret-up"></i></a></th>
-        <th colspan="2"><h5>DUPLICATES</h5><a class="" href="index.php?page=heat&action=sortDuplicatesDesc"><i class="fas fa-caret-down"></i> </a>
-            <a class="" href="index.php?page=heat&action=sortDuplicatesAsc"> <i class="fas fa-caret-up"></i> </a></th>
-        <th colspan="3"><h5>ALBUM</h5><a class="" href="index.php?page=heat&action=sortAlbumTrue"><i class="fas fa-equals"></i> </a>
-            <a class="" href="index.php?page=heat&action=sortAlbumFalse"> <i class="fas fa-not-equal"></i></a></th>
+        <th colspan="2"><h5>YEAR</h5><a class="" href="index.php?page=heat&action=sortYearDesc"><i class="fas fa-caret-down"></i></a>
+            <a class="" href="index.php?page=heat&action=sortYearAsc"><i class="fas fa-caret-up"></i></a></th>
+        <th colspan="2"><h5>DUPLICATES</h5><a class="" href="index.php?page=heat&action=sortDuplicatesDesc"><i class="fas fa-caret-down"></i></a>
+            <a class="" href="index.php?page=heat&action=sortDuplicatesAsc"><i class="fas fa-caret-up"></i></a></th>
+        <th colspan="3"><h5>ALBUM</h5><a class="" href="index.php?page=heat&action=sortAlbumTrue"><i class="fas fa-equals"></i></a>
+            <a class="" href="index.php?page=heat&action=sortAlbumFalse"><i class="fas fa-not-equal"></i></a></th>
     </tr>
     
     <!-- Table Headers -->
